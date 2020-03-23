@@ -1,0 +1,7 @@
+{
+  "name": "skiline",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
