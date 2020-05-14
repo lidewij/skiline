@@ -1,17 +1,81 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border" [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title class="ion-text-center">Discover</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="banner">
+    <div class="header-content">
+      <h3 class="header-1"> Jumping</h3>
+      <h4 class="header-2"> Slalom jumping challenge.</h4>
+      <p> Lorem impsum,Lorem impsum,Lorem impsum,Lorem impsum.</p>
+      <ion-row class="wrapper-head-details">
+        <ion-col size="6">
+          <span class="detais-01">
+            <ion-icon name="star-outline" class="ion-padding-end"></ion-icon>level 3
+          </span>
+        </ion-col>
+        <ion-col size="6">
+          <span class="detais-02">
+            <ion-icon name="time" class="ion-padding-end"></ion-icon>10 min.
+          </span>
+        </ion-col>
+      </ion-row>
+    </div>
+    <ion-button fill="outline" color="light">Go to game</ion-button>
+    <div class="bg-header"></div>
+  </div>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <h5 class="list-title">Train your skills</h5>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-list>
+        <ion-item>
+          <ion-avatar class="ion-margin-end">
+            <img src="https://picsum.photos/200/300?grayscale">
+          </ion-avatar>
+          <ion-label>Slalom</ion-label>
+          <ion-button fill="outline" [routerLink]="['/slalom']"  color="dark">See more</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-avatar class="ion-margin-end">
+            <img src="https://picsum.photos/200/300?grayscale">
+          </ion-avatar>
+          <ion-label>Freestyle</ion-label>
+          <ion-button fill="outline" [routerLink]="['/freestyle']"  color="dark">See more</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-avatar class="ion-margin-end">
+            <img src="https://picsum.photos/200/300?grayscale">
+          </ion-avatar>
+          <ion-label>Jumpchallenge</ion-label>
+          <ion-button fill="outline" [routerLink]="['/jump']"  color="dark">See more</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-avatar class="ion-margin-end">
+            <img src="https://picsum.photos/200/300?grayscale">
+          </ion-avatar>
+          <ion-label>Jumpchallenge</ion-label>
+          <ion-button fill="outline" color="dark">Soon available</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-avatar class="ion-margin-end">
+            <img src="https://picsum.photos/200/300?grayscale">
+          </ion-avatar>
+          <ion-label>Jumpchallenge</ion-label>
+          <ion-button fill="outline" color="dark">Soon available</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+    <ion-row class="fl-image">
+      <h6>Buy the Oculous Quest</h6>
+      <ion-button class="adv-btn" color="dark">buy now</ion-button>
+    </ion-row>
+  </ion-grid>
+
+
+
 </ion-content>

@@ -1,3 +1,128 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+ion-list {
+  width: 80%;
+
+  ion-item ion-label {
+    font-size:14px;
+  }
+}
+
+.fl-image{
+  width: 100%;
+  background: url('src/assets/image/2.png');
+  height: 100px;
+  flex-direction: column;
+  h6 {
+  padding: 20px;
+  }
+  .adv-btn {
+  margin-top: 30px;
+  padding-right:20px;
+  }
+}
+
+.list-title {
+  padding-left: 50px;
+}
+
+ion-card {
+  border-radius: 20px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+ion-card-content{
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+ion-card-title {
+  text-align: left;
+  font-size: 18px;
+}
+
+ion-card-header {
+  padding-bottom: 10px;
+}
+
+ion-card-subtitle {
+  text-align: center;
+  background-color: #000000;
+  padding: 5px;
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 70%;
+}
+
+.loader {
+  margin: 10px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 0.8em solid rgba(27, 27, 27, 0.86);
+  border-right: 0.8em solid rgba(27, 27, 27, 0.86);
+  border-bottom: 0.8em solid rgba(27, 27, 27, 0.86);
+  border-left: 0.8em solid #ffd424;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load 8.1s infinite linear;
+  animation: load 2.1s infinite linear;
+}
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.banner {
+ background-color: lightcoral;
+  border-radius: 0 0 0 40%;
+  height: 300px;
+  width: 100%;
+  color: white;
+  padding: 30px 60px;
+
+  .header-content {
+    z-index: 999;
+
+    p {
+      font-size: 14px;
+    }
+
+    .header-2{
+      margin-top: -5px;
+      font-weight: lighter;
+    }
+  }
+}
+
+.wrapper-head-details{
+  display: flex;
+  flex-direction: row;
+
+  .details-01, .details-02 {
+    display: flex;
+    flex-direction: row;
+  }
+}

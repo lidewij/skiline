@@ -1,3 +1,57 @@
-ion-content ion-toolbar {
-  --background: translucent;
+
+.bg-remote-ctrl {
+  color: white;
+  height: 220px;
+  position: absolute;
+  width: 100%;
+}
+
+.circle-bg {
+  background-color: lightblue;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.circle-bg-small {
+  background-color:white;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 40px auto;
+}
+
+.test-circle {
+  width: 100%;
+}
+
+.remote-btn-bottom{
+  padding-top: 10px;
+}
+
+.remote-btn {
+  padding-bottom: 10px;
+}
+
+.remote-btn-2 {
+  float:right;
+}
+
+.remote-btn-3 {
+  float:left;
+  margin-left:-10px;
+}
+
+.remote-top {
+  padding-top: 150px;
+}
+
+.power-btn {
+  margin: -7px 22px;
+}
+
+.btn {
+  background-color: transparent;
+  box-shadow: none;
 }

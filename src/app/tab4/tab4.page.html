@@ -1,0 +1,75 @@
+
+<ion-content [fullscreen]="true">
+    <ion-grid>
+        <ion-row class="profile-head ion-justify-content-center ion-margin-top">
+            <ion-avatar class="avatar ion-margin-start">
+                <img src="https://picsum.photos/200/300?grayscale">
+            </ion-avatar>
+            <ion-col>
+                <ion-title> Lidewij Jansen</ion-title>
+                <ion-label class="profile-label ion-padding-start">Professional</ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-segment [(ngModel)]="currentTab">
+                <ion-segment-button value="badges">
+                    <ion-label>Badges</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="personal">
+                    <ion-label>Personal</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="stats">
+                    <ion-label>Stats</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+        </ion-row>
+        <ion-row class="bg-segment" *ngIf="currentTab == 'badges'">
+            <h4>Badges</h4>
+            <img class="badges-placeholder" src="assets/image/badges.png"/>
+        </ion-row>
+
+        <ion-row class="bg-segment" *ngIf="currentTab == 'personal'">
+            <ion-col size="12">
+                <h4 class="head-seg ion-padding-start">Personal</h4>
+                <ion-list>
+                    <ion-label class="head-label-list">Email</ion-label>
+                    <ion-item><ion-label>Lidewij122@gmail.com</ion-label></ion-item>
+                </ion-list>
+                <ion-list>
+                    <ion-label class="head-label-list">Mobile</ion-label>
+                    <ion-item><ion-label>0620501415</ion-label></ion-item>
+                </ion-list>
+                <ion-list>
+                    <ion-label class="head-label-list">Instructor</ion-label>
+                    <ion-item>
+                        <ion-avatar class="ion-margin-end">
+                            <img src="https://picsum.photos/200/300?grayscale">
+                        </ion-avatar>
+                        <ion-label>Pietje</ion-label>
+                    </ion-item>
+                </ion-list>
+
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="bg-segment" *ngIf="currentTab == 'stats'">
+            <h4>Statistics</h4>
+
+            <ion-card class="test-card">
+                <ion-row>
+                    <ion-col size="8">
+                        <ion-card-header>
+                            <ion-card-subtitle>slider slide 2</ion-card-subtitle>
+                            <ion-card-title>My current level</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            Keep close to Nature's heart... and break clear away.
+                        </ion-card-content>
+                    </ion-col>
+                    <ion-col size="4" class="ion-align-self-center">
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+        </ion-row>
+    </ion-grid>
+</ion-content>

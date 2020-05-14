@@ -1,17 +1,82 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border" [translucent]="true">
+    <ion-toolbar class="test-toolbar">
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-avatar>
+                    <img src="https://picsum.photos/200/300?grayscale">
+                </ion-avatar>
+            </ion-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">Discover</ion-title>
+        <a class="notification-btn" color="light" slot="secondary">
+            <ion-icon name="notifications-outline"></ion-icon>
+        </a>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-row class="ion-justify-content-center">
+        <div class="banner">
+            <div class="header-content">
+                <h3 class="header-1"> Hello felix,</h3>
+                <h4 class="header-2"> Welcome back sunshine.</h4>
+                <p> Lorem impsum,Lorem impsum,Lorem impsum,Lorem impsum.</p>
+            </div>
+            <div class="bg-header"></div>
+        </div>
+    </ion-row>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <h6 class="title-slider">Train your skills</h6>
+    <app-slider-component></app-slider-component>
+
+    <ion-grid>
+        <ion-row class="bg-btm-page-01 ion-justify-content-center">
+            <ion-list>
+              <ion-row class="">
+                <h6 class="list-title">Train your skills</h6>
+              </ion-row>
+                <ion-item>
+                    <ion-avatar class="ion-margin-end">
+                        <img src="https://picsum.photos/200/300?grayscale">
+                    </ion-avatar>
+                    <div class="column-train-skills">
+                        <ion-label class="label-p-01">Slalom</ion-label>
+                        <ion-label class="lb-02">Last achieved</ion-label>
+                    </div>
+                    <circle-progress
+                            [percent]="90"
+                            [radius]="20"
+                    ></circle-progress>
+                </ion-item>
+                <ion-item>
+                    <ion-avatar class="ion-margin-end">
+                        <img src="https://picsum.photos/200/300?grayscale">
+                    </ion-avatar>
+                    <div class="column-train-skills">
+                        <ion-label class="label-p-01">Freestyle</ion-label>
+                        <ion-label class="lb-02">Last achieved</ion-label>
+                    </div>
+                    <circle-progress
+                            [percent]="85"
+                            [radius]="20"
+                    ></circle-progress>
+                </ion-item>
+                <ion-item>
+                    <ion-avatar class="ion-margin-end">
+                        <img src="https://picsum.photos/200/300?grayscale">
+                    </ion-avatar>
+                    <div class="column-train-skills">
+                      <ion-label class="label-p-01">Jumpchallenge</ion-label>
+                      <ion-label class="lb-03">New challenge</ion-label>
+                    </div>
+                    <circle-progress
+                            [percent]="85"
+                            [radius]="20"
+                    ></circle-progress>
+                </ion-item>
+            </ion-list>
+        </ion-row>
+
+    </ion-grid>
 </ion-content>
+
