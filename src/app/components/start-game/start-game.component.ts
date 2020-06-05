@@ -11,26 +11,35 @@ export class StartGameComponent implements OnInit {
 
   private socket: SocketService;
 
+  private angle: 12;
+
   constructor() {
   }
 
   startWebsocket() {
-     //this.socket = new SocketService('http://localhost', 45678);
+    //this.socket = new SocketService('http://localhost', 45678);
     // this.socket = new SocketService('ws://nodejs-ski-server.herokuapp.com/socket.io/?EIO=4&transport=websocket', 52300);
     this.socket = new SocketService('ws://nodejs-ski-server.herokuapp.com?EIO=4&transport=websocket', 52300);
 
-    this.socket.on('connect', () => {
+
+    //unity:  socket.Emit("connected", JSONObject.CreateStringObject("Unity"));
+    this.socket.emit('connected', JSON.stringify("Ionic app"));
+
+
+    /* this.socket.on('connect', () => {
       console.log('connected');
-      this.socket.emit('register', 'app'); // register app (register vr instead of app)
+      this.socket.emit('register', 'app');
     });
-    this.socket.fromEvent('event').subscribe((message) => { // event handler get the message
+    this.socket.fromEvent('event').subscribe((message) => {
       console.log('Message received: ' + message);
-    });
+    }); */
   }
 
   //send hello
   sendHello() {
-    this.socket.emit('event', 'Hello VR');
+    //this.socket.emit('event', 'Hello VR');
+
+    this.socket.emit('SetAngle', JSON.stringify(this.angle));
   }
   // send highscore
   sendHighscore() {
