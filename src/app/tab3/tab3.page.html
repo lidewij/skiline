@@ -1,46 +1,109 @@
-<ion-header [translucent]="true">
-    <ion-toolbar class="dark-toolbar">
-        <ion-title class="ion-text-center">
-            Remote controle
-        </ion-title>
+<ion-header class="ion-no-border" [translucent]="true">
+    <ion-toolbar class="test-toolbar">
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-avatar>
+                    <img src="https://picsum.photos/200/300?grayscale">
+                </ion-avatar>
+            </ion-button>
+        </ion-buttons>
+        <a class="notification-btn" color="light" slot="secondary">
+            <ion-icon name="notifications-outline"></ion-icon>
+        </a>
     </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-grid class="remote-top">
-      <ion-row class="ion-text-center">
-        <ion-row class="bg-remote-ctrl">
-            <ion-col size="12">
-                <ion-button fill="clear" class="btn remote-btn item-trns">
-                  <img src="assets/image/icon-1.png">
-                </ion-button>
-            </ion-col>
-            <ion-col class="ion-text-center" size="4">
-                <ion-button fill="clear" class="btn remote-btn-2">
-                  <img src="assets/image/icon-2.png">
-                </ion-button>
-            </ion-col>
-            <ion-col class="ion-text-center" size="4">
-              <ion-fab-button class="power-btn">
-                <ion-icon name="power-outline"></ion-icon>
-              </ion-fab-button>
-            </ion-col>
-            <ion-col class="ion-text-center" size="4">
-                <ion-button fill="clear" class="btn remote-btn-3">
-                  <img src="assets/image/icon-3.png">
-                </ion-button>
-            </ion-col>
-            <ion-col class="ion-text-center" size="12">
-                <ion-button fill="clear" class="btn remote-btn-bottom">
-                  <img src="assets/image/icon-4.png">
-                </ion-button>
-            </ion-col>
-        </ion-row>
-      <ion-row class="test-circle">
-        <div class="ion-align-self-center circle-bg">
-            <div class="ion-align-self-center circle-bg-small"></div>
-        </div>
-      </ion-row>
-      </ion-row>
-    </ion-grid>
+    <div class="head-text-register ion-margin-start ion-margin-end ion-padding-start ion-text-start">
+    <h1> Controls </h1>
+        <p>Change your settings overhere. </p>
+
+        <ion-grid class="">
+            <ion-row class="">
+                <ion-col size="6">
+                    <div class="view-slope">
+                        <ion-label>Slope view</ion-label>
+                        <ion-item>
+                            <ion-toggle [(ngModel)]="poep" checked></ion-toggle>
+                        </ion-item>
+                    </div>
+                </ion-col>
+                <ion-col size="6">
+                    <div class="view-mirror">
+                        <ion-label>View mirror</ion-label>
+                        <ion-item>
+                            <ion-toggle [(ngModel)]="sausage" checked></ion-toggle>
+                        </ion-item>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12">
+                    <h3> speed </h3>
+                    <ion-item>
+                        <ion-range min="0" max="200" color="secondary">
+                            <ion-label slot="start">0</ion-label>
+                            <ion-label slot="end">200</ion-label>
+                        </ion-range>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <h4> Reset properties </h4>
+            <ion-row class="reset-properties">
+                <ion-col size="3" class="ion-text-center ion-no-padding">
+                    <ion-button color="light"> <ion-icon slot="icon-only" name="star"></ion-icon></ion-button>
+                    <p>position</p>
+                </ion-col>
+                <ion-col size="3" class="ion-text-center ion-no-padding">
+                    <ion-button color="light"> <ion-icon name="bar-chart-outline"></ion-icon></ion-button>
+                    <p>level</p>
+                </ion-col>
+                <ion-col size="3" class="ion-text-center ion-no-padding">
+                    <ion-button color="light"> <ion-icon name="eye-outline"></ion-icon></ion-button>
+                    <p>view</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+
+<!--    <ion-grid class="remote-top">-->
+<!--      <ion-row class="ion-text-center">-->
+<!--        <ion-row class="bg-remote-ctrl">-->
+<!--            <ion-col size="12">-->
+<!--                <ion-button fill="clear" class="btn remote-btn item-trns">-->
+<!--                  <img src="assets/image/icon-1.png">-->
+<!--                </ion-button>-->
+<!--            </ion-col>-->
+<!--            <ion-col class="ion-text-center" size="4">-->
+<!--                <ion-button fill="clear" class="btn remote-btn-2">-->
+<!--                  <img src="assets/image/icon-2.png">-->
+<!--                </ion-button>-->
+<!--            </ion-col>-->
+<!--            <ion-col class="ion-text-center" size="4">-->
+<!--              <ion-fab-button class="power-btn">-->
+<!--                <ion-icon name="power-outline"></ion-icon>-->
+<!--              </ion-fab-button>-->
+<!--            </ion-col>-->
+<!--            <ion-col class="ion-text-center" size="4">-->
+<!--                <ion-button fill="clear" class="btn remote-btn-3">-->
+<!--                  <img src="assets/image/icon-3.png">-->
+<!--                </ion-button>-->
+<!--            </ion-col>-->
+<!--            <ion-col class="ion-text-center" size="12">-->
+<!--                <ion-button fill="clear" class="btn remote-btn-bottom">-->
+<!--                  <img src="assets/image/icon-4.png">-->
+<!--                </ion-button>-->
+<!--            </ion-col>-->
+<!--        </ion-row>-->
+<!--      <ion-row class="test-circle">-->
+<!--        <div class="ion-align-self-center circle-bg">-->
+<!--            <div class="ion-align-self-center circle-bg-small"></div>-->
+<!--        </div>-->
+<!--      </ion-row>-->
+<!--      </ion-row>-->
+<!--    </ion-grid>-->
 </ion-content>
+<ion-footer no-lines>
+    <ion-button expand="full">Stop game</ion-button>
+</ion-footer>

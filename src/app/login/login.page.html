@@ -1,39 +1,41 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Sign in User</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <form>
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" #email required></ion-input>
-    </ion-item>
+    <div class="content ion-justify-content-center">
+      <h1 class="ion-text-start ion-margin-start ion-margin-top ion-padding-start login-title">Hello,</h1>
+      <h2 class="ion-text-start ion-margin-start  ion-padding-bottom ion-padding-start">Welcome back</h2>
 
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" #password required></ion-input>
-    </ion-item>
+      <div class="bg-login"></div>
+      <form class="ion-margin">
+        <ion-item class="ion-padding-start ion-padding-end" lines="full">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="text" #email required></ion-input>
+        </ion-item>
 
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button
-                type="submit"
-                color="danger"
-                (click)="authService.GoogleAuth()"
-                expand="block">
-          Login with Google
+        <ion-item class="ion-padding-start ion-padding-end" lines="full">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" #password required></ion-input>
+        </ion-item>
+
+        <ion-row class="">
+          <ion-col>
+            <ion-button type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button
+                    type="submit"
+                    color="danger"
+                    (click)="authService.GoogleAuth()"
+                    expand="block">
+              Login with Google
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-button class="sign-up"
+                size="small"
+              >
+          Sign up
         </ion-button>
-      </ion-col>
-    </ion-row>
-  </form>
+      </form>
+    </div>
 </ion-content>

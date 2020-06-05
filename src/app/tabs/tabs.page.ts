@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ModalController} from '@ionic/angular';
+import {Setup1Page} from '../setup1/setup1.page';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(public modalController: ModalController) {}
 
+   async tabChange(event) {
+     if (event.tab === 'tab3') {
+       const modal = await this.modalController.create({
+         component: Setup1Page,
+       });
+       await modal.present();
+     }
+   }
 }

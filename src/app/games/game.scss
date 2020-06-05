@@ -2,11 +2,20 @@ ion-toolbar h4 {
   margin-top: 10px
 }
 
-.game-image {
-  margin: -141px;
-  height: 400px;
-  background: url('src/assets/image/2.png');
+.banner {
+  background: url('src/assets/image/image.png');
+  background-position-y:80%;
   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0 0 0 40%;
+  height: 200px;
+  width: 100%;
+  color: white;
+  padding: 40px;
+}
+
+.bg-seg-1 {
+  background-color:#F1F2F7;
 }
 
 ion-card {

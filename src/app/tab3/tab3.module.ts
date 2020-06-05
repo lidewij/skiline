@@ -1,6 +1,6 @@
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import {IonicModule, ModalController, NavController} from '@ionic/angular';
+import {Router, RouterModule} from '@angular/router';
+import {AfterContentInit, AfterViewInit, NgModule, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
@@ -16,4 +16,17 @@ import { ExploreContainerComponentModule } from '../components/explore-container
   ],
   declarations: [Tab3Page]
 })
-export class Tab3PageModule {}
+export class Tab3PageModule implements OnInit {
+
+  constructor() {
+  }
+
+  ngOnInit() {
+
+   // this.router.navigate(['/']);
+
+  }
+  ionViewDidEnter(){
+  }
+
+}

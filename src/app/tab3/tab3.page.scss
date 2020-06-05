@@ -1,3 +1,7 @@
+ion-toolbar  ion-avatar {
+  width: 30px;
+  height: 30px;
+}
 
 .bg-remote-ctrl {
   color: white;
@@ -54,4 +58,27 @@
 .btn {
   background-color: transparent;
   box-shadow: none;
+}
+
+.notification-btn {
+  padding-top:10px;
+  margin-right: 20px;
+  font-size: 25px;
+}
+
+.reset-properties {
+  ion-button {
+    height: 60px;
+    width: 60px;
+  }
+  p {
+    margin-top: 3px;
+    font-size: 13px;
+  }
+}
+
+ion-footer {
+  &.footer-md::before {
+    background-image: none;
+  }
 }

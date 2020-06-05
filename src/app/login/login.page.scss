@@ -1,0 +1,36 @@
+
+ion-content {
+  --background: url('../../assets/image/bg.svg') no-repeat center/cover fixed;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.content{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+h1 {
+  color: white;
+  font-weight: bolder;
+  padding-top: 80px;
+}
+
+h2 {
+  color: white;
+
+}
+
+form {
+  padding-top: 30px;
+}
+
+.sign-up {
+  --box-shadow: none!important;
+  --background: transparent;
+  border-bottom: 3px solid red;
+  color: RED;
+}

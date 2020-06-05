@@ -8,24 +8,50 @@
 </ion-header>
 
 <ion-content>
+  <div class="banner">
+    <div class="header-content">
+    </div>
+    <div class="bg-header"></div>
+  </div>
 
   <ion-grid>
-    <ion-row>
-      <ion-card class="ion-no-border">
-        <ion-card-header>
-          <ion-card-subtitle>How to Slalom?</ion-card-subtitle>
-          <ion-card-title>Slalom</ion-card-title>
-          <hr>
-        </ion-card-header>
-        <ion-card-content>
-          This lesson teaches two variations on a classic must know followers jump. Version one ends in closed position.
-          <ion-button fill="outline" color="danger" class="ion-margin-top ion-margin-end">Watch video</ion-button>
-        </ion-card-content>
-      </ion-card>
+    <ion-row class="ion-padding-top">
+      <ion-segment [(ngModel)]="currentTab">
+        <ion-segment-button value="description">
+          <ion-label>Description</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="levels">
+          <ion-label>Levels</ion-label>
+        </ion-segment-button>
+      </ion-segment>
     </ion-row>
-    <ion-row class="game-image"></ion-row>
-  </ion-grid>
 
+    <ion-row class="bg-segment bg-seg-1 ion-padding-start ion-padding-end" *ngIf="currentTab == 'description'">
+      <h4 class="ion-padding-start">Description</h4>
+
+        <ion-card class="ion-no-border">
+          <ion-card-header>
+            <ion-card-subtitle>How to Slalom?</ion-card-subtitle>
+            <ion-card-title>Slalom</ion-card-title>
+            <hr>
+          </ion-card-header>
+          <ion-card-content>
+            This lesson teaches two variations on a classic must know followers jump. Version one ends in closed position.
+            <ion-button fill="outline" color="danger" class="ion-margin-top ion-margin-end">Watch video</ion-button>
+          </ion-card-content>
+        </ion-card>
+      <ion-row class="game-image"></ion-row>
+
+    </ion-row>
+
+    <ion-row class="bg-segment bg-seg-1" *ngIf="currentTab == 'levels'">
+      <ion-col size="12">
+        <h4 class="ion-padding-start">Levels</h4>
+        <img class="" src="assets/image/bad.png"/>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <app-start-game></app-start-game>
 

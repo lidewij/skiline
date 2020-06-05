@@ -1,0 +1,12 @@
+ion-slides {
+  height: 100%;
+}
+
+.next-button {
+  margin: 0 20px;
+}
+ion-footer {
+  &.footer-md::before {
+    background-image: none;
+  }
+}

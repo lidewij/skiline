@@ -1,0 +1,23 @@
+
+ion-content {
+  --background: url('../../assets/image/bg2.svg') no-repeat center/cover fixed;
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.form-color-white {
+  color: white;
+  font-weight: bolder;
+}
+
+form {
+  padding-top: 100px;
+}
+
+ion-item {
+  color: white;
+  font-weight: bolder;
+}

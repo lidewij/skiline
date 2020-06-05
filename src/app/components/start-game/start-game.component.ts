@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SocketService} from '../../services/SocketService';
+import {Message} from '../../models/message';
 
 @Component({
   selector: 'app-start-game',
@@ -18,18 +19,28 @@ export class StartGameComponent implements OnInit {
     // this.socket = new SocketService('ws://nodejs-ski-server.herokuapp.com/socket.io/?EIO=4&transport=websocket', 52300);
     this.socket = new SocketService('ws://nodejs-ski-server.herokuapp.com?EIO=4&transport=websocket', 52300);
 
-
     this.socket.on('connect', () => {
       console.log('connected');
-      this.socket.emit('register', 'app');
+      this.socket.emit('register', 'app'); // register app (register vr instead of app)
     });
-    this.socket.fromEvent('event').subscribe((message) => {
+    this.socket.fromEvent('event').subscribe((message) => { // event handler get the message
       console.log('Message received: ' + message);
     });
   }
 
+  //send hello
   sendHello() {
     this.socket.emit('event', 'Hello VR');
+  }
+  // send highscore
+  sendHighscore() {
+    const message: Message = new Message('highscore', 300);
+    this.socket.emit('event', message);
+  }
+  // send another
+  sendData() {
+    const message: Message = new Message('angle', 20);
+    this.socket.emit('sendData', message);
   }
 
   stopWebsocket() {
