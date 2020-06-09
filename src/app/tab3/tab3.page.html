@@ -34,7 +34,7 @@
                     <div class="view-slope">
                         <ion-label>Slope view</ion-label>
                         <ion-item>
-                            <ion-toggle [(ngModel)]="test" checked></ion-toggle>
+                            <ion-toggle [(ngModel)]="slope" (ionChange)="toggleSlope()"></ion-toggle>
                         </ion-item>
                     </div>
                 </ion-col>
@@ -42,7 +42,7 @@
                     <div class="view-mirror">
                         <ion-label>View mirror</ion-label>
                         <ion-item>
-                            <ion-toggle [(ngModel)]="sausage" checked></ion-toggle>
+                            <ion-toggle [(ngModel)]="mirror" (ionChange)="toggleMirror()"></ion-toggle>
                         </ion-item>
                     </div>
                 </ion-col>

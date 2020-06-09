@@ -10,8 +10,12 @@ import {Message} from '../../models/message';
 export class StartGameComponent implements OnInit {
 
   private socket: SocketService;
-
-  private angle = 30;
+  private angle = 0;
+  private spawner = 0;
+  private speed = 20;
+  private mirror = true;
+  private slope = true;
+  private sticks = true;
 
   constructor() {
   }
@@ -22,42 +26,46 @@ export class StartGameComponent implements OnInit {
     // unity:  socket.Emit("connected", JSONObject.CreateStringObject("Unity"));
     this.socket.emit('connected', JSON.stringify('Ionic app'));
 
-    this.socket.fromEvent('SetScene').subscribe((message) => {
-      // console.log(JSON.stringify(message.data));
-      // console.dir(JSON.stringify(message.data));
+    this.socket.fromEvent('SetScore').subscribe((message: any) => {
+      console.log(message.data);
     });
 
-    this.socket.fromEvent('SetSpawner').subscribe((message) => {
-      // console.log(JSON.stringify(message.data));
-      // console.dir(JSON.stringify(message.data));
+    this.socket.fromEvent('AdjustedScore').subscribe((message: any) => {
+      console.log(message.data);
+});
+
+    this.socket.fromEvent('SetScene').subscribe((message: any) => {
+      console.log(message.data);
     });
 
-    this.socket.fromEvent('SetAngle').subscribe((message) => {
-      // console.log(JSON.stringify(message.data));
-      // console.dir(JSON.stringify(message.data));
+    this.socket.fromEvent('SetSpawner').subscribe((message: any) => {
+      console.log(message.data);
     });
 
-    this.socket.fromEvent('AdjustedAngle').subscribe((message) => {
-      console.log(JSON.stringify(message.data));
-      // console.dir(JSON.stringify(message.data));
+    this.socket.fromEvent('SetAngle').subscribe((message: any) => {
+      console.log(message.data);
     });
 
-    this.socket.fromEvent('SetSpeed').subscribe((message) => {
-      // console.log(JSON.stringify(message.data));
-      // console.dir(JSON.stringify(message.data));
+    this.socket.fromEvent('AdjustedAngle').subscribe((message: any) => {
+      console.log(message.data);
     });
 
-    this.socket.fromEvent('ToggleSlope').subscribe((message) => {
-      // console.log(JSON.stringify(message.data));
-      // console.dir(JSON.stringify(message.data));
+    this.socket.fromEvent('SetSpeed').subscribe((message: any) => {
+      console.log(message.data);
     });
 
-    this.socket.fromEvent('ToggleSticks').subscribe((message) => {
-      // console.log(JSON.stringify(message.data));
-      // console.dir(JSON.stringify(message.data));
+    this.socket.fromEvent('ToggleSlope').subscribe((message: any) => {
+      console.log(message.data);
+    });
+
+    this.socket.fromEvent('ToggleSticks').subscribe((message: any) => {
+      console.log(message.data);
     });
   }
 
+  startGame() {
+      this.socket.emit('StartGame', JSON.stringify(this.startgame));
+  }
   // 1. sending scene
   setScene() {
     this.socket.emit('SetScene', JSON.stringify(this.angle));
@@ -65,7 +73,7 @@ export class StartGameComponent implements OnInit {
 
  // 2. Sending Spawner
   setSpawner() {
-    this.socket.emit('SetSpawner', JSON.stringify(this.angle));
+    this.socket.emit('SetSpawner', JSON.stringify(this.spawner));
   }
 
   // 3. send angle
@@ -75,39 +83,28 @@ export class StartGameComponent implements OnInit {
 
   // 4. set speed
   setSpeed() {
-    this.socket.emit('SetSpeed', JSON.stringify(this.angle));
+    this.socket.emit('SetSpeed', JSON.stringify(this.speed));
   }
 
   // 5. Toggle mirror
   toggleMirror() {
-    this.socket.emit('ToggleMirror', JSON.stringify(this.angle));
+    this.socket.emit('ToggleMirror', JSON.stringify(this.mirror));
   }
 
   // 6. Toggle slope
   toggleSlope() {
-    this.socket.emit('ToggleSlope', JSON.stringify(this.angle));
+    this.socket.emit('ToggleSlope', JSON.stringify(this.slope));
   }
 
   // 7. Toggle sticks
   toggleSticks() {
-    this.socket.emit('ToggleSticks', JSON.stringify(this.angle));
+    this.socket.emit('ToggleSticks', JSON.stringify(this.sticks));
   }
 
   // Stop websocket
   stopWebsocket() {
     this.socket.disconnect();
   }
-
-  // // send highscore
-  // sendHighscore() {
-  //   const message: Message = new Message('highscore', 300);
-  //   this.socket.emit('event', message);
-  // }
-  // // send another
-  // sendData() {
-  //   const message: Message = new Message('angle', 20);
-  //   this.socket.emit('sendData', message);
-  // }
 
   ngOnInit(): void {
   }
