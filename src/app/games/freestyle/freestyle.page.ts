@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FreestylePage implements OnInit {
 
+  private gameNumber = 0;
+
   constructor() {
   }
 

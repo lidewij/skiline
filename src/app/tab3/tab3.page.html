@@ -20,49 +20,56 @@
         <ion-grid class="">
             <ion-row>
                 <ion-col size="12">
-                    <h3> speed </h3>
+                    <h4> speed </h4>
                     <ion-item>
-                        <ion-range min="0" max="200" color="secondary">
+                        <ion-range class="ion-no-padding" min="0" pin="true" max="200" color="secondary" [(ngModel)]="socket.speed" (ionChange)="socket.setSpeed()">
                             <ion-label slot="start">0</ion-label>
                             <ion-label slot="end">200</ion-label>
                         </ion-range>
                     </ion-item>
                 </ion-col>
             </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <h4> angle </h4>
+                    <ion-item>
+                        <ion-range class="ion-no-padding" min="0" pin="true" max="200" color="secondary" [(ngModel)]="socket.angle" (ionChange)="socket.setAngle()">
+                            <ion-label slot="start">0</ion-label>
+                            <ion-label slot="end">90</ion-label>
+                        </ion-range>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
             <ion-row class="">
-                <ion-col size="6">
+                <ion-col size="4">
                     <div class="view-slope">
                         <ion-label>Slope view</ion-label>
                         <ion-item>
-                            <ion-toggle [(ngModel)]="slope" (ionChange)="toggleSlope()"></ion-toggle>
+                            <ion-toggle [(ngModel)]="socket.slope" (ionChange)="socket.toggleSlope()"></ion-toggle>
                         </ion-item>
                     </div>
                 </ion-col>
-                <ion-col size="6">
+                <ion-col size="4">
                     <div class="view-mirror">
                         <ion-label>View mirror</ion-label>
                         <ion-item>
-                            <ion-toggle [(ngModel)]="mirror" (ionChange)="toggleMirror()"></ion-toggle>
+                            <ion-toggle [(ngModel)]="socket.mirror" (ionChange)="socket.toggleMirror()"></ion-toggle>
+                        </ion-item>
+                    </div>
+                </ion-col>
+                <ion-col size="4">
+                    <div class="view-mirror">
+                        <ion-label>View sticks</ion-label>
+                        <ion-item>
+                            <ion-toggle [(ngModel)]="socket.sticks" (ionChange)="socket.toggleSticks()"></ion-toggle>
                         </ion-item>
                     </div>
                 </ion-col>
             </ion-row>
 
             <h4> Reset properties </h4>
-            <ion-row class="reset-properties">
-                <ion-col size="3" class="ion-text-center ion-no-padding">
-                    <ion-button color="light"> <ion-icon slot="icon-only" name="star"></ion-icon></ion-button>
-                    <p>position</p>
-                </ion-col>
-                <ion-col size="3" class="ion-text-center ion-no-padding">
-                    <ion-button color="light"> <ion-icon name="bar-chart-outline"></ion-icon></ion-button>
-                    <p>level</p>
-                </ion-col>
-                <ion-col size="3" class="ion-text-center ion-no-padding">
-                    <ion-button color="light"> <ion-icon name="eye-outline"></ion-icon></ion-button>
-                    <p>view</p>
-                </ion-col>
-            </ion-row>
+            <ion-button (click)="socket.reset()">Set all to default</ion-button>
         </ion-grid>
     </div>
 
@@ -104,6 +111,4 @@
 <!--      </ion-row>-->
 <!--    </ion-grid>-->
 </ion-content>
-<ion-footer no-lines>
-    <ion-button expand="full">Stop game</ion-button>
-</ion-footer>
+

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JumpPage implements OnInit {
 
+  private gameNumber = 0;
+
   constructor() {
   }
 

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SlalomPage implements OnInit {
 
   public currentTab = 'description';
+  private gameNumber = 0;
 
   constructor() {
   }
