@@ -17,14 +17,24 @@
     <div class="head-text-register ion-margin-start ion-margin-end ion-padding-start ion-text-start">
     <h1> Controls </h1>
         <p>Change your settings overhere. </p>
-
         <ion-grid class="">
+            <ion-row>
+                <ion-col size="12">
+                    <h3> speed </h3>
+                    <ion-item>
+                        <ion-range min="0" max="200" color="secondary">
+                            <ion-label slot="start">0</ion-label>
+                            <ion-label slot="end">200</ion-label>
+                        </ion-range>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
             <ion-row class="">
                 <ion-col size="6">
                     <div class="view-slope">
                         <ion-label>Slope view</ion-label>
                         <ion-item>
-                            <ion-toggle [(ngModel)]="poep" checked></ion-toggle>
+                            <ion-toggle [(ngModel)]="test" checked></ion-toggle>
                         </ion-item>
                     </div>
                 </ion-col>
@@ -37,17 +47,7 @@
                     </div>
                 </ion-col>
             </ion-row>
-            <ion-row>
-                <ion-col size="12">
-                    <h3> speed </h3>
-                    <ion-item>
-                        <ion-range min="0" max="200" color="secondary">
-                            <ion-label slot="start">0</ion-label>
-                            <ion-label slot="end">200</ion-label>
-                        </ion-range>
-                    </ion-item>
-                </ion-col>
-            </ion-row>
+
             <h4> Reset properties </h4>
             <ion-row class="reset-properties">
                 <ion-col size="3" class="ion-text-center ion-no-padding">

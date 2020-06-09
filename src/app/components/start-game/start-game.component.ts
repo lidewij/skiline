@@ -11,90 +11,104 @@ export class StartGameComponent implements OnInit {
 
   private socket: SocketService;
 
-  private angle: 12;
+  private angle = 30;
 
   constructor() {
   }
 
   startWebsocket() {
-    //this.socket = new SocketService('http://localhost', 45678);
-    // this.socket = new SocketService('ws://nodejs-ski-server.herokuapp.com/socket.io/?EIO=4&transport=websocket', 52300);
     this.socket = new SocketService('ws://nodejs-ski-server.herokuapp.com?EIO=4&transport=websocket', 52300);
 
+    // unity:  socket.Emit("connected", JSONObject.CreateStringObject("Unity"));
+    this.socket.emit('connected', JSON.stringify('Ionic app'));
 
-    //unity:  socket.Emit("connected", JSONObject.CreateStringObject("Unity"));
-    this.socket.emit('connected', JSON.stringify("Ionic app"));
-
-
-    /* this.socket.on('connect', () => {
-      console.log('connected');
-      this.socket.emit('register', 'app');
+    this.socket.fromEvent('SetScene').subscribe((message) => {
+      // console.log(JSON.stringify(message.data));
+      // console.dir(JSON.stringify(message.data));
     });
-    this.socket.fromEvent('event').subscribe((message) => {
-      console.log('Message received: ' + message);
-    }); */
+
+    this.socket.fromEvent('SetSpawner').subscribe((message) => {
+      // console.log(JSON.stringify(message.data));
+      // console.dir(JSON.stringify(message.data));
+    });
+
+    this.socket.fromEvent('SetAngle').subscribe((message) => {
+      // console.log(JSON.stringify(message.data));
+      // console.dir(JSON.stringify(message.data));
+    });
+
+    this.socket.fromEvent('AdjustedAngle').subscribe((message) => {
+      console.log(JSON.stringify(message.data));
+      // console.dir(JSON.stringify(message.data));
+    });
+
+    this.socket.fromEvent('SetSpeed').subscribe((message) => {
+      // console.log(JSON.stringify(message.data));
+      // console.dir(JSON.stringify(message.data));
+    });
+
+    this.socket.fromEvent('ToggleSlope').subscribe((message) => {
+      // console.log(JSON.stringify(message.data));
+      // console.dir(JSON.stringify(message.data));
+    });
+
+    this.socket.fromEvent('ToggleSticks').subscribe((message) => {
+      // console.log(JSON.stringify(message.data));
+      // console.dir(JSON.stringify(message.data));
+    });
   }
 
-  //send hello
-  sendHello() {
-    //this.socket.emit('event', 'Hello VR');
+  // 1. sending scene
+  setScene() {
+    this.socket.emit('SetScene', JSON.stringify(this.angle));
+  }
 
+ // 2. Sending Spawner
+  setSpawner() {
+    this.socket.emit('SetSpawner', JSON.stringify(this.angle));
+  }
+
+  // 3. send angle
+  setAngle() {
     this.socket.emit('SetAngle', JSON.stringify(this.angle));
   }
-  // send highscore
-  sendHighscore() {
-    const message: Message = new Message('highscore', 300);
-    this.socket.emit('event', message);
-  }
-  // send another
-  sendData() {
-    const message: Message = new Message('angle', 20);
-    this.socket.emit('sendData', message);
+
+  // 4. set speed
+  setSpeed() {
+    this.socket.emit('SetSpeed', JSON.stringify(this.angle));
   }
 
+  // 5. Toggle mirror
+  toggleMirror() {
+    this.socket.emit('ToggleMirror', JSON.stringify(this.angle));
+  }
+
+  // 6. Toggle slope
+  toggleSlope() {
+    this.socket.emit('ToggleSlope', JSON.stringify(this.angle));
+  }
+
+  // 7. Toggle sticks
+  toggleSticks() {
+    this.socket.emit('ToggleSticks', JSON.stringify(this.angle));
+  }
+
+  // Stop websocket
   stopWebsocket() {
     this.socket.disconnect();
   }
 
+  // // send highscore
+  // sendHighscore() {
+  //   const message: Message = new Message('highscore', 300);
+  //   this.socket.emit('event', message);
+  // }
+  // // send another
+  // sendData() {
+  //   const message: Message = new Message('angle', 20);
+  //   this.socket.emit('sendData', message);
+  // }
+
   ngOnInit(): void {
   }
-
-  // startWebsocket() {
-  //   this.socket = new SocketService('ws://nodejs-ski-server.herokuapp.com:80/socket.io/?EIO=4&transport=websocket', 52300);
-  //   this.socket.connect();
-  //   // this.socket = new SocketService('http://localhost', 45678);
-  //   // this.socket.on('connect', () => {
-  //   //   console.log('connected');
-  //   //   // this.socket.emit('registerApp', 'app');
-  //   // });
-  //   // this.socket.fromEvent('event').subscribe((message) => {
-  //   //   console.log('Message received: ' + message);
-  //   // });
-  //   this.socket.on('registerApp', (data) => {
-  //     console.log('test');
-  //   });
-  //   // this.socket.emit('registeredApp');
-  //
-  //   this.socket.fromEvent('registerApp').subscribe((message) => {
-  //     console.log('test' + message);
-  //   });
-  // }
-  // sendHello() {
-  //   this.socket.emit('registeredApp');
-  // }
-  //
-  // stopWebsocket() {
-  //   this.socket.disconnect();
-  // }
-
-//   ngOnInit() {
-//   //   this.socket = new SocketService('ws://nodejs-ski-server.herokuapp.com:80/socket.io/?EIO=4&transport=websocket', 52300);
-//   //   this.socket.connect();
-//   //
-//   //   this.socket.fromEvent('registerApp').subscribe( (message) => {
-//   //     console.log('test' + message);
-//   //   });
-//   //   this.socket.emit('registeredApp', 'message' );
-//   // }
-// }
 }
